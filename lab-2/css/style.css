@@ -1,0 +1,130 @@
+html, body {
+    margin: 0;
+    font-family: Tahoma, serif
+}
+
+.menu {
+    background: rgb(242 242 237);
+    height: 62px;
+}
+
+.menu a {
+    text-decoration: none; /* ссылки без подчеркиваний */
+}
+
+.menu a:link {
+    color: black;
+}
+
+.menu a:visited {
+    color: black;
+}
+
+.menu nav {
+    display: inline-block;
+    float: right;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.logo img {
+    height: 48px;
+    margin-top: 7px;
+    margin-left: 5px;
+}
+
+ul.nav-menu li {
+    display: inline; /* строчный элемент */
+    font-size: 22px;
+    color: black;
+    font-weight: 400;
+    margin-right: 16px;
+}
+
+.info {
+    height: 400px;
+    background-image: url("/lab-1/img/background-info.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.info-text {
+    padding: 45px 15%;
+    color: rgb(31 31 31);
+}
+
+.info-text h1 {
+    text-align: center;
+}
+
+.info-text h2 {
+    text-align: justify;
+}
+
+.info-text h3 {
+    text-align: center;
+}
+
+.catalog {
+    background: white;
+    height: 550px;
+    text-align: center;
+}
+
+.catalog h1 {
+    font-weight: 400;
+}
+
+.catalog-item-inner img {
+    height: 400px;
+    box-shadow: 10px 10px 10px dimgray;
+}
+
+.catalog-item {
+    display: inline-block;
+    width: 33%;
+}
+
+.catalog-item-inner {
+    margin: 0 auto; /* центрирование по горизонтали */
+    width: 80%;
+    font-size: 22px;
+}
+
+.catalog-item-title {
+    margin: 10px 0;
+}
+
+.contacts {
+    height: 265px;
+    margin: 0;
+    background: rgb(31 31 31);
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+    text-align: center;
+}
+
+.contacts img {
+    width: 85px;
+}
+
+.contacts div {
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+    margin-top: 20px;
+}
+
+.contacts h1 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.contacts h2 {
+    font-weight: 100;
+    font-size: 18px;
+}
