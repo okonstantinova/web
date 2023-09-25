@@ -52,20 +52,36 @@ ul.nav-menu li {
 }
 
 .info-text {
+    font-size: 20px;
+    font-weight: 500;
     padding: 45px 15%;
     color: rgb(31 31 31);
+}
+
+#info-text-title {
+    text-transform: uppercase;
 }
 
 .info-text h1 {
     text-align: center;
 }
 
-.info-text h2 {
+#info-text-body {
+    line-height: 150%;
     text-align: justify;
+    text-indent: 5%;
+    word-spacing: 1em;
+    letter-spacing: 0.1em;
 }
 
-.info-text h3 {
+#info-text-footer {
     text-align: center;
+}
+
+.info-text pre {
+    font-size: 1em;
+    text-align: justify;
+    color: darkred;
 }
 
 .catalog {
