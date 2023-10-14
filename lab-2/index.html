@@ -5,6 +5,8 @@
     <meta name="keywords" content="магазин, кондитерская, торт, сладкое, доставка">
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/hover.js" type="text/javascript"></script>
     <title>Кондитерская ТОРТИКИ</title>
 </head>
 <body>
@@ -24,7 +26,7 @@
 <main>
     <div class="info">
         <div class="info-text">
-            <h1>Кондитерская студия <br id="info-text-title">ТОРТИКИ</h1>
+            <h1>Кондитерская студия <br><span>Тортики</span></h1>
             <p id="info-text-body">В нашем онлайн-магазине вы можете ознакомиться c предлагаемыми кондитерскими изделиями, их начинками и
                 ценами.
                 Также можно сделать заказ и проверить его статус.</p>
@@ -32,8 +34,11 @@
         </div>
     </div>
     <div class="catalog">
-        <div class="catalog-item">
-            <div class="catalog-item-inner">
+        <div>
+            <div class="catalog-item-inner" onmouseover="showHover(this)" onmouseout="hideHover()">
+                <div class="catalog-item-hover">
+                    <a href="bento.html"><img src="img/category/bento.png" alt="Бенто"></a>
+                </div>
                 <a href="bento.html"><img src="img/category/bento.png" alt="Бенто"></a>
                 <div class="catalog-item-title">Бенто</div>
             </div>

@@ -5,7 +5,7 @@ html, body {
 
 .menu {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     background: rgb(242 242 237);
     height: 62px;
     width: 100%;
@@ -14,7 +14,7 @@ html, body {
 @media (max-width: 500px) {
     .menu {
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         background: rgb(0 0 0);
         height: 62px;
         width: 100%;
@@ -114,27 +114,13 @@ ul.nav-menu li {
     }
 }
 
-/*@media (max-width: 810px) {*/
-/*    .info-text {*/
-/*        font-size: 15px;*/
-/*        font-weight: 400;*/
-/*        padding: 20px 15%;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 320px) {*/
-/*    .info-text {*/
-/*        font-size: 10px;*/
-/*        font-weight: 300;*/
-/*    }*/
-/*}*/
-
-#info-text-title {
+.info-text span {
     text-transform: uppercase;
 }
 
 .info-text h1 {
     text-align: center;
+    position: sticky; /* заголовок таблицы */
 }
 
 #info-text-body {
@@ -169,12 +155,19 @@ ul.nav-menu li {
     }
 }
 
+.catalog-item-hover {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
 .catalog-item-inner img {
     max-width: 100%;
     box-shadow: 10px 10px 10px dimgray;
 }
 
 .catalog-item-inner {
+    position: relative;
     margin: 0 auto; /* центрирование по горизонтали */
     width: 80%;
     font-size: 2vw;
@@ -210,7 +203,6 @@ ul.nav-menu li {
 }
 
 .contacts img {
-    /*width: 85px;*/
     max-width: 100%;
 }
 
