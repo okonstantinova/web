@@ -1,0 +1,9 @@
+.fav-empty {
+    top: 62px;
+    position: relative;
+    height: 50vh;
+    margin-bottom: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

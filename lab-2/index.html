@@ -6,6 +6,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/load.js" type="text/javascript"></script>
     <script src="js/hover.js" type="text/javascript"></script>
     <title>Кондитерская ТОРТИКИ</title>
 </head>
@@ -13,14 +14,15 @@
 <header class="menu">
     <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Тортики"></a></div>
     <nav>
-        <ul class="nav-menu" role="list">
-            <li><a href="fav.html">ИЗБРАННОЕ</a></li>
-            <li><a href="cart.html">КОРЗИНА</a></li>
+        <ul class="nav-menu">
+            <li class="nav-menu-li"><div id="menu-fav"><a href="fav.html">ИЗБРАННОЕ</a></div></li>
+            <li class="nav-menu-li"><div id="menu-cart"><a href="cart.html">КОРЗИНА</a></div></li>
         </ul>
         <div class="nav-menu-img">
             <div class="nav-menu-img-item"><a><img src="img/fav.png" alt="Избранное"></a></div>
             <div class="nav-menu-img-item"><a><img src="img/cart.png" alt="Избранное"></a></div>
         </div>
+        <script src="js/nav.js" type="text/javascript"></script>
     </nav>
 </header>
 <main>
@@ -44,13 +46,19 @@
             </div>
         </div>
         <div class="catalog-item">
-            <div class="catalog-item-inner">
+            <div class="catalog-item-inner" onmouseover="showHover(this)" onmouseout="hideHover()">
+                <div class="catalog-item-hover">
+                    <a href="regular.html"><img src="img/category/regular.png" alt="Средний размер"></a>
+                </div>
                 <a href="regular.html"><img src="img/category/regular.png" alt="Средний размер"></a>
                 <div class="catalog-item-title">Торт от 1 кг</div>
             </div>
         </div>
         <div class="catalog-item">
-            <div class="catalog-item-inner">
+            <div class="catalog-item-inner" onmouseover="showHover(this)" onmouseout="hideHover()">
+                <div class="catalog-item-hover">
+                    <a href="wedding.html"><img src="img/category/mousse.png" alt="Муссовое сердце"></a>
+                </div>
                 <a href="wedding.html"><img src="img/category/mousse.png" alt="Муссовое сердце"></a>
                 <div class="catalog-item-title">Муссовое сердце</div>
             </div>
@@ -77,6 +85,7 @@
             <h2>СБ - ВС 11:00 - 17:00</h2>
         </div>
     </div>
+    <div id="stats"></div>
 </footer>
 </body>
 </html>

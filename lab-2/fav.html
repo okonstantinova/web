@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/fav.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/load.js" type="text/javascript"></script>
+    <title>Избранное</title>
 </head>
 <body>
-
+<header class="menu">
+    <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Тортики"></a></div>
+    <nav>
+        <ul class="nav-menu">
+            <li class="nav-menu-li"><div id="menu-fav"><a href="fav.html">ИЗБРАННОЕ</a></div></li>
+            <li class="nav-menu-li"><div id="menu-cart"><a href="cart.html">КОРЗИНА</a></div></li>
+        </ul>
+        <div class="nav-menu-img">
+            <div class="nav-menu-img-item"><a><img src="img/fav.png" alt="Избранное"></a></div>
+            <div class="nav-menu-img-item"><a><img src="img/cart.png" alt="Избранное"></a></div>
+        </div>
+        <script src="js/nav.js" type="text/javascript"></script>
+    </nav>
+</header>
+<main>
+    <div class="fav-empty">
+        В избранном пока что ничего нет...
+    </div>
+</main>
+<footer>
+    <div class="contacts">
+        <div>
+            <img src="img/phone.png">
+            <h1>Контакты</h1>
+            <h2>+79218478031</h2>
+        </div>
+        <div>
+            <img src="img/address.png">
+            <h1>Адрес</h1>
+            <h2>Санкт-Петербург</h2>
+            <h2>Кронверский проспект, ИТМО</h2>
+        </div>
+        <div>
+            <img src="img/hours.png">
+            <h1>Часы работы</h1>
+            <h2>ПН - ПТ 9:00 - 19:00</h2>
+            <h2>СБ - ВС 11:00 - 17:00</h2>
+        </div>
+    </div>
+    <div id="stats"></div>
+</footer>
+<script>
+    const menu = document.getElementById('menu-fav');
+    menu.classList.toggle('menu-active');
+</script>
 </body>
-</html>
+
