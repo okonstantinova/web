@@ -59,7 +59,7 @@ html, body {
     display: inline;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 501px) {
     .nav-menu-img {
         display: none;
     }
@@ -241,14 +241,14 @@ ul.nav-menu li {
         margin: 0;
     }
 
-    .foo {
+    .contacts-image {
         display: flex;
         justify-content: center;
         align-items: center;
         flex: 1;
     }
 
-    .foo img {
+    .contacts-image img {
         max-width: 45%;
     }
 
@@ -258,13 +258,13 @@ ul.nav-menu li {
 }
 
 @media (max-width: 600px) {
-    .foo img {
+    .contacts-image img {
         max-width: 58%;
     }
 }
 
 @media (max-width: 500px) {
-    .foo img {
+    .contacts-image img {
         max-width: 75%;
     }
 }
