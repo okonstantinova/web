@@ -7,60 +7,61 @@ document.getElementById('properties').addEventListener('submit', function (event
     let item = {
         title: "Бенто-торт",
         taste: taste.value,
-        decor: decor.value
+        decor: decor.value,
+        price: getPrice()
     };
 
-    // находим свободное имя ключа, чтобы добавить элемент
-    for (let i = 0; true; i++) {
-        const key = "item-" + i;
-        if (localStorage.getItem(key) === null) {
-            localStorage.setItem(key, JSON.stringify(item));
-            break;
-        }
-    }
+    // получаем массив из хранилища
+    const value = localStorage.getItem('cart');
+    const items = value !== null ? JSON.parse(value) : [];
+    items.push(item);
 
-    renderCart();
+    localStorage.setItem('cart', JSON.stringify(items)); // обновляем хранилище
 
+    renderCart(); // перерисовка корзины
+
+    // отображение корзины
     const cart = document.getElementsByClassName('cart-container-hidden').item(0);
     cart.className = 'cart-container-visible';
 });
 
 function renderCart() {
     // получаем контейнер для динамических элементов
-    var container = document.getElementsByClassName('cart-content').item(0);
+    const container = document.getElementsByClassName('cart-content').item(0);
 
     // очистим контейнер
     container.innerHTML = '';
 
-    let added = false;
+    // получаем массив из хранилища
+    const value = localStorage.getItem('cart');
+    const items = value !== null ? JSON.parse(value) : [];
 
     // создаем элементы на основе данных
-    for (let i = 0; i < 1000; i++) {
-        const item = localStorage.getItem("item-" + i);
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
 
-        if (item !== null) {
-            let value = JSON.parse(item);
+        const template = document.getElementById('cart-item-template'); // ссылка на шаблон
+        const clone = document.importNode(template.content, true);
 
-            var cartItem = document.createElement("div");
-            cartItem.className = 'cart-item';
-            container.appendChild(cartItem);
+        const image = clone.querySelector('.cart-item-image-inner');
+        image.src = getImageSrc();
 
-            cartItem.innerHTML =
-                '<div class="cart-item-image">' +
-                '<img src="' + getImageSrc() + '">' +
-                '</div>' +
-                '<div>' +
-                '<div class="cart-item-title">' + value.title + '</div>' +
-                '<div class="cart-item-price">' + getPriceStr() + '</div>' +
-                '<div class="cart-item-options">' + value.taste + ', ' + value.decor + '</div>' +
-                '<button id="' + "item-" + i + '" onclick="removeItem(event)">Удалить</button>' +
-                '</div>'
+        const title = clone.querySelector('.cart-item-title');
+        title.textContent = item.title;
 
-            added = true;
-        }
+        const price = clone.querySelector('.cart-item-price');
+        price.textContent = getPriceStr(item.price);
+
+        const options = clone.querySelector('.cart-item-options');
+        options.textContent = item.taste + ', ' + item.decor;
+
+        const button = clone.querySelector('.cart-item-button');
+        button.id = i.toString();
+
+        container.appendChild(clone);
     }
 
-    if (!added) {
+    if (items.length === 0) {
         container.innerHTML = '<div class="cart-empty">В корзине пока что ничего нет...</div>';
         document.getElementsByClassName('cart-footer').item(0).style.display = 'none';
     }
@@ -77,8 +78,8 @@ function closeCart() {
     cart.className = 'cart-container-hidden';
 }
 
-function getPriceStr() {
-    return getPrice() + ' руб.';
+function getPriceStr(price) {
+    return price + ' руб.';
 }
 
 function getPrice() {
@@ -90,8 +91,17 @@ function getTotalStr() {
 }
 
 function getTotal() {
-     const count = localStorage.length;
-     return count * getPrice();
+    // получаем массив из хранилища
+    const value = localStorage.getItem('cart');
+    const items = value !== null ? JSON.parse(value) : [];
+
+    let total = 0
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        total += item.price;
+    }
+
+    return total;
 }
 
 function getImageSrc() {
@@ -100,8 +110,14 @@ function getImageSrc() {
 
 function removeItem(event) {
     const element = event.target; // возвращаем элемент, который отправил событие
-    const id = element.id;
-    localStorage.removeItem(id);
+    const index = parseInt(element.id, 10); // представляем в 10-ой сс
+
+    // получаем массив из хранилища
+    const value = localStorage.getItem('cart');
+    const items = value !== null ? JSON.parse(value) : [];
+
+    items.splice(index, 1); // удаление
+    localStorage.setItem('cart', JSON.stringify(items)); // обновляем хранилище
 
     renderCart(); // перерисовываем корзину
 }

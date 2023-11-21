@@ -69,6 +69,19 @@
                 <div class="cart-total">Итого: <span id="total-value"></span></div>
                 <button>Оформить заказ</button>
             </div>
+            <template id="cart-item-template">
+                <div class="cart-item">
+                    <div class="cart-item-image">
+                        <img class="cart-item-image-inner" src="">
+                    </div>
+                    <div>
+                        <div class="cart-item-title"></div>
+                        <div class="cart-item-price"></div>
+                        <div class="cart-item-options"></div>
+                        <button class="cart-item-button" id="" onclick="removeItem(event)">Удалить</button>
+                    </div>
+                </div>
+            </template>
         </div>
     </div>
     <script src="js/bento.js" type="text/javascript"></script>
