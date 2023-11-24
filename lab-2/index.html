@@ -4,73 +4,90 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="магазин, кондитерская, торт, сладкое, доставка">
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/load.js" type="text/javascript"></script>
     <title>Кондитерская ТОРТИКИ</title>
 </head>
 <body>
 <header class="menu">
     <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Тортики"></a></div>
     <nav>
-        <ul class="nav-menu" role="list">
-            <li><a href="fav.html">ИЗБРАННОЕ</a></li>
-            <li><a href="cart.html">КОРЗИНА</a></li>
+        <ul class="nav-menu">
+            <li class="nav-menu-li"><div id="menu-fav"><a href="fav.html">ИЗБРАННОЕ</a></div></li>
+            <li class="nav-menu-li"><div id="menu-cart"><a href="cart.html">КОРЗИНА</a></div></li>
         </ul>
+        <div class="nav-menu-img">
+            <div class="nav-menu-img-item"><a><img src="img/fav.png" alt="Избранное"></a></div>
+            <div class="nav-menu-img-item"><a><img src="img/cart.png" alt="Избранное"></a></div>
+        </div>
+        <script src="js/nav.js" type="text/javascript"></script>
     </nav>
 </header>
 <main>
     <div class="info">
         <div class="info-text">
-            <h1>Кондитерская студия</h1>
-            <h1 id="info-text-title"><ins>Тортики</ins></h1>
+            <h1>Кондитерская студия <br><span>Тортики</span></h1>
             <p id="info-text-body">В нашем онлайн-магазине вы можете ознакомиться c предлагаемыми кондитерскими изделиями, их начинками и
                 ценами.
                 Также можно сделать заказ и проверить его статус.</p>
-            <pre>
-                [̲̅Б̲̅][̲̅у̲][̲̅д̲][̲̅е̲][̲̅м̲] [̲̅ж̲][̲̅д̲][̲̅а̲̅][̲̅т̲][̲̅ь̲̅] [̲̅в̲][̲̅а̲][̲̅ш̲] [̲̅з̲][̲̅а̲][̲̅к̲][̲̅а̲][̲̅з̲̅][̲̅!̲]
-            </pre>
+            <p id="info-text-footer">Будем ждать ваш заказ!</p>
         </div>
     </div>
     <div class="catalog">
-        <h1>Каталог</h1>
-        <div class="catalog-item">
+        <div>
             <div class="catalog-item-inner">
                 <a href="bento.html"><img src="img/category/bento.png" alt="Бенто"></a>
                 <div class="catalog-item-title">Бенто</div>
             </div>
         </div>
-        <div class="catalog-item">
+        <div>
             <div class="catalog-item-inner">
                 <a href="regular.html"><img src="img/category/regular.png" alt="Средний размер"></a>
                 <div class="catalog-item-title">Торт от 1 кг</div>
             </div>
         </div>
-        <div class="catalog-item">
+        <div>
             <div class="catalog-item-inner">
                 <a href="wedding.html"><img src="img/category/mousse.png" alt="Муссовое сердце"></a>
-                <div class="catalog-item-title">Муссовое <del>очень красивое </del>сердце</div>
+                <div class="catalog-item-title">Муссовое сердце</div>
             </div>
         </div>
     </div>
 </main>
 <footer>
     <div class="contacts">
-        <div>
-            <img src="img/phone.png">
-            <h1>Контакты</h1>
-            <h2>+79218478031</h2>
+        <div class="contacts-item">
+            <div class="contacts-image">
+                <img src="img/phone.png">
+            </div>
+            <div class="contacts-item-text">
+                <h1>Контакты</h1>
+                <p>+79218478031</p>
+            </div>
         </div>
-        <div>
-            <img src="img/address.png">
-            <h1>Адрес</h1>
-            <h2>Санкт-Петербург</h2>
-            <h2>Кронверский проспект, ИТМО</h2>
+        <div class="contacts-item">
+            <div class="contacts-image">
+                <img src="img/address.png">
+            </div>
+            <div class="contacts-item-text">
+                <h1>Адрес</h1>
+                <p>Санкт-Петербург</p>
+                <p>Кронверский проспект, ИТМО</p>
+            </div>
         </div>
-        <div>
-            <img src="img/hours.png">
-            <h1>Часы работы</h1>
-            <h2>ПН - ПТ 9:00 - 19:00</h2>
-            <h2>СБ - ВС 11:00 - 17:00</h2>
+        <div class="contacts-item">
+            <div class="contacts-image">
+                <img src="img/hours.png">
+            </div>
+            <div class="contacts-item-text">
+                <h1>Часы работы</h1>
+                <p>ПН - ПТ 9:00 - 19:00</p>
+                <p>СБ - ВС 11:00 - 17:00</p>
+            </div>
         </div>
     </div>
+    <div id="stats"></div>
 </footer>
 </body>
 </html>
