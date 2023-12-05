@@ -135,4 +135,9 @@ const swiper = new Swiper(
         nextEl: '.swiper-button-next', // имя класса кнопки "следующий"
         prevEl: '.swiper-button-prev', // имя класса кнопки "предыдущий"
     },
+
+    pagination: {
+        el: '.swiper-pagination', // указываем контейнер для точек
+        clickable: true, // делаем точки кликабельными
+    },
 });

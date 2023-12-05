@@ -13,9 +13,9 @@ function loadComments() {
     setTimeout(delayedLoadComments, 1000);
 }
 
-function delayedLoadComments() {
+async function delayedLoadComments() {
     let page = getRandomPage();
-    const url = `http://localhost:3000/bento-comments?_page=${page}&_limit=5`; // запрашиваем случайные 5 комментариев
+    const url = "http://localhost:3000/bento-comments?_page=${page}&_limit=5"; // запрашиваем случайные 5 комментариев
     const requestOptions = {
         method: 'GET',
         headers: {
@@ -23,23 +23,18 @@ function delayedLoadComments() {
         }
     };
 
-    const request = fetch(url, requestOptions);
-    const response = request.then(response => {
+    try {
+        const response = await fetch(url, requestOptions)
         if (!response.ok) {
             throw new Error(`Response was not ok: ${response.statusText}`);
         }
 
-        return response.json();
-    });
-
-    const result = response.then(data => {
+        const data = await response.json();
         renderComments(data);
-    });
-
-    result.catch(error => {
+    } catch (error) {
         renderError();
         console.error('Loading error: ', error.message);
-    });
+    }
 }
 
 function renderComments(data) {
