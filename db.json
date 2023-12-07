@@ -17,5 +17,3 @@
     { "id": 15, "author": "Роман Н.", "date": "24 ноября 2023", "title": "Доволен", "text": "Заказал, получил, съел.", "rating": 5}
   ]
 }
-
-// http://my-json-server.typicode.com/okonstantinova/test-json-server
