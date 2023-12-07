@@ -15,7 +15,7 @@ function loadComments() {
 
 async function delayedLoadComments() {
     let page = getRandomPage();
-    const url = "http://localhost:3000/bento-comments?_page=${page}&_limit=5"; // запрашиваем случайные 5 комментариев
+    const url = `https://my-json-server.typicode.com/okonstantinova/web/bento-comments?_page=${page}&_limit=5`; // запрашиваем случайные 5 комментариев
     const requestOptions = {
         method: 'GET',
         headers: {
