@@ -121,3 +121,23 @@ function removeItem(event) {
 
     renderCart(); // перерисовываем корзину
 }
+
+// инициализация компонента Swiper
+const swiper = new Swiper(
+    '.swiper', // имя класса-контейнера для слайдов
+    {
+    // установка опциональных параметров
+    direction: 'horizontal', // анимация влево/вправо
+    loop: true, // если дошли до последнего слайда, автоматически переходим к первому
+
+    // инициализация кнопок
+    navigation: {
+        nextEl: '.swiper-button-next', // имя класса кнопки "следующий"
+        prevEl: '.swiper-button-prev', // имя класса кнопки "предыдущий"
+    },
+
+    pagination: {
+        el: '.swiper-pagination', // указываем контейнер для точек
+        clickable: true, // делаем точки кликабельными
+    },
+});
